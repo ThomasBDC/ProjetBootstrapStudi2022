@@ -1,3 +1,18 @@
 .titrePrincipal{
     text-align: center;
 }
+
+.container{
+    background-color: white;
+}
+
+.row div{
+    background-color: #e39687;
+    text-align: center;
+    border: solid 1px #3a2a52;
+}
+
+body{
+    background-color: #3a2a52;
+    color:white;
+}
