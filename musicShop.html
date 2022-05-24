@@ -8,6 +8,7 @@
 
     <!--Import des feuilles de styles (CSS) -->
     <link rel="stylesheet" href="lib/Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="musicShop.css"/>
 </head>
 <body>
@@ -18,8 +19,9 @@
     <div class="container">
         <!--Barre de recherche-->
         <div class="row">
-            <div class="col-12 searchbar-container">
-                <input class="shadow searchbar" type="text" placeholder="Recherchez ce qu'il vous faut..."/> <button>Rechercher</button>
+            <div class="col-12 searchbar-container form-group d-flex justify-content-center">
+                <input class="shadow searchbar form-control" type="text" placeholder="Recherchez ce qu'il vous faut..."/>
+                <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Rechercher</button>
             </div>
         </div>
 
@@ -31,7 +33,7 @@
                     <h5>Instrument</h5>
                     <div class="row">
                         <div class="col-4 col-md-12">
-                            <input type="checkbox" id="cb1"/><label for="cb1">Basses</label>
+                            <input class="" type="checkbox" id="cb1"/><label for="cb1">Basses</label>
                         </div>
                         <div class="col-4 col-md-12">
                             <input type="checkbox" id="cb2"/><label for="cb2">Guitares</label>
@@ -45,7 +47,7 @@
                     <h5>Style</h5>
                     <div class="row">
                         <div class="col-4 col-md-12">
-                            <input type="radio" name="style" id="rb1"/><label for="rb1">Electrique</label>
+                            <inputtype="radio" name="style" id="rb1"/><label for="rb1">Electrique</label>
                         </div>
                         <div class="col-4 col-md-12">
                             <input type="radio" name="style" id="rb2"/><label for="rb2">Acoustique</label>
@@ -59,7 +61,7 @@
                     <div class="filters m-2">
                         <h5>Livraison</h5>
                         <div>
-                            <select>
+                            <select class="form-control">
                                 <option>Point relais</option>
                                 <option>Domicile</option>
                                 <option>En magasin</option>
@@ -69,7 +71,7 @@
                     <div class="filters m-2">
                         <h5>Prix max.</h5>
                         <div>
-                            <input type="range" min="50" max="99999"/>
+                            <input class="form-control" type="range" min="50" max="99999"/>
                         </div>
                     </div>
                 </div>
@@ -85,6 +87,9 @@
                                 <h4>Basse électrique</h4>
                                 <span class="price">5200 €</span>
                                 <p>Description rapide de l'article</p>
+                                <div class="text-center text-white">
+                                    <a class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> Voir l'article</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
@@ -93,6 +98,9 @@
                                 <h4>Basse électrique</h4>
                                 <span class="price">5200 €</span>
                                 <p>Description rapide de l'article</p>
+                                <div class="text-center text-white">
+                                    <a class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> Voir l'article</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
@@ -101,6 +109,9 @@
                                 <h4>Basse électrique</h4>
                                 <span class="price">5200 €</span>
                                 <p>Description rapide de l'article</p>
+                                <div class="text-center text-white">
+                                    <a class="btn btn-primary" ><i class="fa-solid fa-cart-shopping"></i> Voir l'article</a>
+                                </div>
                             </div>
                         </div>
                     </div>

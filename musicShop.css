@@ -12,7 +12,7 @@
 }
 
 .price{
-    color:cornflowerblue;
+    color:rgb(67, 163, 174);
     font-weight: bold;
     font-size: 21px;
     display:block;
@@ -26,4 +26,14 @@
 .searchbar-container{
     padding: 15px;
     text-align: center;
+}
+
+.btn-primary{
+    background-color: rgb(67, 163, 174);
+    border: 1px solid rgb(67, 163, 174);
+}
+
+.btn-primary:hover, .btn-primary:active{
+    background-color: rgb(39, 86, 91) !important;
+    border: 1px solid rgb(39, 86, 91) !important;
 }
