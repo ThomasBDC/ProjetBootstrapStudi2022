@@ -11,12 +11,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="musicShop.css"/>
 </head>
-<body>
+<body class="">
     <!--Navbar en image -->
-    <img id="navbarimg" src="navbar.png"/>
+    <header class="bg-dark fixed-top" id="headerPrincipal">
+        <!-- Déclaration du composant -->
+        <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="headerNavbar">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-icons"></i> Music Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-burger"></i>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <img src="https://picsum.photos/200" />
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <button  onclick="ChangeMode()" class="btn btn-outline-light my-2 my-sm-0">Light Mode</button>
+              </form>
+            </div>
+          </nav>
+        </div>
+
+    </header>
     
     <!-- Contenu de ma page-->
-    <div class="container">
+    <main class="container">
         <!--Barre de recherche-->
         <div class="row">
             <div class="col-12 searchbar-container form-group d-flex justify-content-center">
@@ -31,29 +72,29 @@
             <div class="col-12 col-md-3 shadow p-3">
                 <div class="filters">
                     <h5>Instrument</h5>
-                    <div class="row">
-                        <div class="col-4 col-md-12">
-                            <input class="" type="checkbox" id="cb1"/><label for="cb1">Basses</label>
+                    <div class="row pl-3">
+                        <div class="col-4 col-md-12 form-check">
+                            <input class="form-check-input" type="checkbox" id="cb1"/><label for="cb1">Basses</label>
                         </div>
-                        <div class="col-4 col-md-12">
-                            <input type="checkbox" id="cb2"/><label for="cb2">Guitares</label>
+                        <div class="col-4 col-md-12 form-check">
+                            <input class="form-check-input" type="checkbox" id="cb2"/><label for="cb2">Guitares</label>
                         </div>
-                        <div class="col-4 col-md-12">
-                            <input type="checkbox" id="cb3"/><label for="cb3">Batteries</label>
+                        <div class="col-4 col-md-12 form-check">
+                            <input class="form-check-input" type="checkbox" id="cb3"/><label for="cb3">Batteries</label>
                         </div>
                     </div>
                 </div>
                 <div class="filters">
                     <h5>Style</h5>
-                    <div class="row">
-                        <div class="col-4 col-md-12">
-                            <inputtype="radio" name="style" id="rb1"/><label for="rb1">Electrique</label>
+                    <div class="row pl-3">
+                        <div class="col-4 col-md-12 form-check">
+                            <input class="form-check-input" type="radio" name="style" id="rb1"/><label for="rb1">Electrique</label>
                         </div>
-                        <div class="col-4 col-md-12">
-                            <input type="radio" name="style" id="rb2"/><label for="rb2">Acoustique</label>
+                        <div class="col-4 col-md-12 form-check">
+                            <input class="form-check-input" type="radio" name="style" id="rb2"/><label for="rb2">Acoustique</label>
                         </div>
-                        <div class="col-4 col-md-12">
-                            <input type="radio" name="style" id="rb3"/><label for="rb3">Electro-acoustique</label>
+                        <div class="col-4 col-md-12 form-check">
+                            <input class="form-check-input" type="radio" name="style" id="rb3"/><label for="rb3">Electro-acoustique</label>
                         </div>
                     </div>
                 </div>
@@ -70,8 +111,8 @@
                     </div>
                     <div class="filters m-2">
                         <h5>Prix max.</h5>
-                        <div>
-                            <input class="form-control" type="range" min="50" max="99999"/>
+                        <div class="form-group">
+                            <input class="form-control-range" type="range" min="50" max="99999"/>
                         </div>
                     </div>
                 </div>
@@ -119,9 +160,31 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="/lib/JQuery/jquery-3.3.1.slim.min.js"></script>
     <script src="/lib/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let isDark = false;
+        function ChangeMode(){
+            if(isDark){
+                document.body.classList.remove("bg-dark");
+                document.body.classList.remove("text-light");
+                document.getElementById("headerPrincipal").classList.add("bg-dark");
+                document.getElementById("headerPrincipal").classList.remove("bg-light");
+                document.getElementById("headerNavbar").classList.add("navbar-light");
+                document.getElementById("headerNavbar").classList.remove("navbar-dark");
+            }
+            else{
+                document.body.classList.add("bg-dark");
+                document.body.classList.add("text-light");
+                document.getElementById("headerPrincipal").classList.remove("bg-dark");
+                document.getElementById("headerPrincipal").classList.add("bg-light");
+                document.getElementById("headerNavbar").classList.remove("navbar-dark");
+                document.getElementById("headerNavbar").classList.add("navbar-light");
+            }
+            isDark = !isDark;
+        }   
+    </script>
 </body>
 </html>
