@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <!-- Button trigger modal -->
+    <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#modalDeStudi">
+        Launch demo modal
+    </button>
+   -->
+
+   <I>Ajoute des pourcentages pour arriver à 100, tu auras une surprise</I>
+   <br/>
+   <input class="form form-control" 
+        type="number"
+        id="inputPourModal"/>
+
+    <div class="progress">
+        <div class="
+            progress-bar
+            progress-bar-striped
+            progress-bar-animated"
+         role="progressbar" 
+         id="progressBarToto"
+            style="width: 5%">5%</div>
+    </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modalDeStudi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Bravo, vous êtes arrivé à 100</h4>
+          <I>Si tu veux cacher la modale, inscrit hide-modal dans l'input</I>
+          <br/>
+
+          <input class="form form-control" placeholder="commande bootstrap custom"
+               id="inputPourCacherModal"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("inputPourModal").addEventListener("keypress",handleChange);
+        document.getElementById("inputPourCacherModal").onchange = changementMAsquerModal;
+        
+        const progressBar = document.getElementById("progressBarToto");
+        
+        const myModal = new bootstrap.Modal('#modalDeStudi');
+        let pourcent = 5;
+        function handleChange(e) {
+            if(e.which == 13){
+                if(parseInt(e.target.value)){
+                    pourcent += parseInt(e.target.value);
+                    
+                    progressBar.innerText = pourcent+"%";
+                    progressBar.style.width = pourcent+"%";
+
+                    if(pourcent == 100){
+                        myModal.show();
+                    }
+                }
+            }
+            
+        }
+
+        function changementMAsquerModal(e) {
+            if(e.target.value == 'hide-modal'){
+                myModal.hide();
+            }
+        }
+    </script>
+  </body>
+</html>
