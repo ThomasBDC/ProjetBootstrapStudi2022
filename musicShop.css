@@ -1,5 +1,10 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body{
-    min-height: 100vh;
+    margin-bottom: 100px;
 }
 
 main{
@@ -8,6 +13,39 @@ main{
 
 #navbarimg{
     width:100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    padding:30px;
+    background-color: rgb(39, 86, 91) !important;
+    color:white;
+}
+
+.btn-primary{
+    background-color: rgb(67, 163, 174);
+    border: 1px solid rgb(67, 163, 174);
+}
+
+.btn-primary:hover, .btn-primary:active{
+    background-color: rgb(39, 86, 91) !important;
+    border: 1px solid rgb(39, 86, 91) !important;
+}
+
+
+.toast-communication{
+    position:fixed;
+    right:10px;
+    bottom: 10px;
+    min-width:150px;
+    background-color: rgb(67, 163, 174);
+}
+
+.toast{
+    z-index: 1000;
 }
 
 .price{
@@ -27,20 +65,3 @@ main{
     text-align: center;
 }
 
-.btn-primary{
-    background-color: rgb(67, 163, 174);
-    border: 1px solid rgb(67, 163, 174);
-}
-
-.btn-primary:hover, .btn-primary:active{
-    background-color: rgb(39, 86, 91) !important;
-    border: 1px solid rgb(39, 86, 91) !important;
-}
-
-.toast-communication{
-    position:fixed;
-    right:10px;
-    bottom: 10px;
-    min-width:150px;
-    background-color: rgb(67, 163, 174);
-}
